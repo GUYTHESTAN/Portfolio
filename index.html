@@ -1,0 +1,396 @@
+<title>Portfolio Adiko Guy Anoh</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Mise en page : colonne unique de lecture (max 1040px), bandes alternées, hero avec carte de favorabilité, tableaux scrollables */
+:root{
+  --bg:#F4F6F7; --surface:#FFFFFF; --ink:#11202A; --muted:#566672; --line:#DCE3E7; --accent:#0B6E7F; --accent-ink:#FFFFFF; --accent-soft:#E2F1F4;
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0F171C;--surface:#162128;--ink:#E6EEF2;--muted:#93A5B0;--line:#26353E;--accent:#4FB3C4;--accent-ink:#0B1519;--accent-soft:#17323A;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F171C;--surface:#162128;--ink:#E6EEF2;--muted:#93A5B0;--line:#26353E;--accent:#4FB3C4;--accent-ink:#0B1519;--accent-soft:#17323A;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);line-height:1.15;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.6rem,4vw,2.1rem);font-weight:700;letter-spacing:-.01em}
+h3{font-size:1.2rem;font-weight:700}
+p{margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+section{padding-block:clamp(48px,8vw,88px);border-top:1px solid var(--line)}
+.sec-head{display:grid;gap:10px;margin-bottom:32px;max-width:62ch}
+.sec-head p{color:var(--muted)}
+
+/* nav */
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px}
+.brand{font-family:var(--f-display);font-weight:700;font-size:1.05rem}
+.top nav{display:flex;gap:20px;font-size:.92rem}
+.top nav a{color:var(--muted);text-decoration:none}
+.top nav a:hover{color:var(--accent)}
+@media(max-width:720px){.top nav{display:none}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:clamp(24px,6vw,64px) clamp(48px,8vw,80px)}
+.hero h1{font-size:clamp(2.1rem,6vw,3.5rem);font-weight:700;letter-spacing:-.02em}
+.hero .role{font-family:var(--f-mono);font-size:.85rem;color:var(--muted);margin-bottom:14px}
+.hero .lead{font-size:1.15rem;max-width:46ch;margin-top:18px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:12px 22px;border-radius:6px;font-weight:600;text-decoration:none;border:1.5px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--accent);background:transparent}
+.btn:hover{filter:brightness(1.08)}
+.hero figure{margin:0}
+.hero img{display:block;width:100%;max-height:520px;object-fit:cover;object-position:top;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+figcaption{font-size:.82rem;color:var(--muted);margin-top:8px}
+@media(max-width:820px){.hero{grid-template-columns:1fr}.hero img{max-height:360px}}
+
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+.about p+p{margin-top:14px}
+.facts{display:grid;gap:0;align-content:start;border-top:1px solid var(--line)}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.facts dt{color:var(--muted)} .facts dd{margin:0;font-weight:500;text-align:right}
+.facts{margin:0}
+@media(max-width:820px){.about{grid-template-columns:1fr}}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px;min-width:0}
+.skill h3{margin-bottom:12px}
+.skill ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:.95rem}
+.skill li{padding-left:16px;position:relative}
+.skill li::before{content:"";position:absolute;left:0;top:.7em;width:7px;height:2px;background:var(--accent)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.tag{font-family:var(--f-mono);font-size:.76rem;padding:3px 8px;border-radius:4px;background:var(--accent-soft);color:var(--accent)}
+@media(max-width:720px){.skills{grid-template-columns:1fr}}
+
+/* projects */
+.projects{display:grid;gap:0}
+.proj{display:grid;grid-template-columns:200px 1fr;gap:12px 40px;padding-block:32px;border-top:1px solid var(--line)}
+.proj:first-child{border-top:0;padding-top:0}
+.proj .meta{font-family:var(--f-mono);font-size:.82rem;color:var(--muted);display:grid;gap:4px;align-content:start}
+.proj .meta strong{color:var(--ink);font-weight:500}
+.proj h3{margin-bottom:14px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px 32px}
+.cols h4{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 6px;font-weight:500}
+.cols p,.cols ul{font-size:.95rem;margin:0}
+.cols ul{padding-left:18px;display:grid;gap:4px}
+.result{grid-column:1/-1;background:var(--accent-soft);border-radius:6px;padding:14px 16px}
+.result p{font-size:.97rem}
+@media(max-width:820px){.proj{grid-template-columns:1fr}.cols{grid-template-columns:1fr}}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.gallery figure{margin:0;min-width:0}
+.gallery a{display:block;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface)}
+.gallery img{display:block;width:100%;height:340px;object-fit:cover;object-position:top}
+.gallery .tall img{object-position:center top}
+.gallery figcaption strong{color:var(--ink);font-weight:600}
+@media(max-width:720px){.gallery{grid-template-columns:1fr}.gallery img{height:auto;max-height:420px}}
+
+/* tables */
+.tbl{margin-bottom:48px}
+.tbl h3{margin-bottom:6px}
+.tbl .src{font-size:.85rem;color:var(--muted);margin-bottom:12px}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.92rem;font-variant-numeric:tabular-nums}
+th,td{padding:10px 14px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:var(--surface);font-weight:500}
+thead th{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--surface);vertical-align:bottom;white-space:normal}
+tbody tr:last-child td{border-bottom:0}
+tfoot td{font-weight:600;border-top:2px solid var(--ink);border-bottom:0}
+td.on{text-align:center;color:var(--accent);font-size:1.05rem}
+td.off{text-align:center;color:var(--line)}
+th.c{text-align:center}
+.read{margin-top:12px;max-width:70ch;font-size:.97rem}
+.read::before{content:"Lecture : ";font-weight:600;color:var(--accent)}
+.hl{background:var(--accent-soft)}
+td.hl:first-child{background:var(--accent-soft)}
+
+/* timeline */
+.tl{display:grid;grid-template-columns:1.3fr 1fr;gap:48px}
+.tl ol{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.tl li{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line)}
+.tl li:last-child{border-bottom:1px solid var(--line)}
+.tl time{font-family:var(--f-mono);font-size:.82rem;color:var(--muted)}
+.tl strong{display:block;font-weight:600}
+.tl span{font-size:.92rem;color:var(--muted)}
+.tl h3{margin-bottom:12px}
+@media(max-width:860px){.tl{grid-template-columns:1fr;gap:36px}.tl li{grid-template-columns:1fr;gap:2px}}
+
+/* contact */
+.contact{display:grid;gap:14px;max-width:520px}
+.crow{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.crow .k{font-family:var(--f-mono);font-size:.78rem;color:var(--muted);width:90px;text-transform:uppercase;letter-spacing:.06em}
+.crow .v{font-weight:500;overflow-wrap:anywhere;min-width:0;flex:1}
+.copy{font:inherit;font-size:.82rem;padding:6px 12px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.copy:hover{border-color:var(--accent);color:var(--accent)}
+footer{padding-block:28px 40px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <span class="brand">Adiko Guy Anoh</span>
+    <nav aria-label="Sections">
+      <a href="#projets">Projets</a><a href="#cartes">Cartes</a><a href="#chiffres">Chiffres</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+  <div class="hero">
+    <div>
+      <p class="role">Chargé d'études SIG &amp; Suivi-Évaluation · Abidjan</p>
+      <h1>Des données de terrain aux outils d'aide à la décision.</h1>
+      <p class="lead">Géomaticien (Master 2), je produis des cartes thématiques, des bases géospatiales et des synthèses fiables pour les équipes techniques et les décideurs.</p>
+      <div class="btns">
+        <a class="btn primary" href="#contact">Me contacter</a>
+        <a class="btn ghost" href="cv.pdf" target="_blank" rel="noopener">Voir mon CV</a>
+      </div>
+    </div>
+    <figure>
+      <img src="img/favorabilite-aurifere.jpg" alt="Carte de favorabilité aurifère du Nord de la Côte d'Ivoire par analyse multicritère" width="1000" height="1300">
+      <figcaption>Favorabilité aurifère du Nord de la Côte d'Ivoire, analyse multicritère sous SIG (SODEMI, 2025).</figcaption>
+    </figure>
+  </div>
+
+  <section id="apropos">
+    <div class="about">
+      <div>
+        <div class="sec-head"><span class="eyebrow">À propos</span><h2>Fiabiliser la donnée, puis la rendre lisible.</h2></div>
+        <p>Titulaire d'un Master 2 en Géomatique et Ingénierie de l'Environnement et de l'Aménagement, je contrôle la qualité de données géolocalisées (superficies, délimitations), je structure des bases PostgreSQL/PostGIS et je rédige des synthèses cartographiques pour des publics techniques et non techniques.</p>
+        <p>J'ai travaillé pour TERRABO (eau, foncier, infrastructures) et la SODEMI (exploration minière), en Côte d'Ivoire et en Guinée, au contact des équipes de collecte et des communautés rurales.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Formation</dt><dd>Master 2 Géomatique, 2026</dd></div>
+        <div><dt>Poste actuel</dt><dd>Géomaticien, TERRABO</dd></div>
+        <div><dt>Terrain</dt><dd>Côte d'Ivoire, Guinée</dd></div>
+        <div><dt>Langues</dt><dd>Français, anglais</dd></div>
+        <div><dt>Disponibilité</dt><dd>Déplacements terrain</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="competences">
+    <div class="sec-head"><span class="eyebrow">Compétences</span><h2>Quatre domaines qui couvrent la chaîne de la donnée.</h2></div>
+    <div class="skills">
+      <div class="skill"><h3>SIG et cartographie</h3>
+        <div class="tags"><span class="tag">QGIS</span><span class="tag">ArcGIS / ArcGIS Pro</span><span class="tag">Google Earth Engine</span></div>
+        <ul><li>Cartes thématiques et opérationnelles, atlas</li><li>Analyse spatiale raster et vectorielle</li><li>Télédétection : ERDAS, ENVI, SNAP</li></ul></div>
+      <div class="skill"><h3>Bases de données</h3>
+        <div class="tags"><span class="tag">PostgreSQL / PostGIS</span><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Excel</span></div>
+        <ul><li>Structuration de bases géospatiales</li><li>Tri, nettoyage et consolidation de données volumineuses</li></ul></div>
+      <div class="skill"><h3>Collecte de données</h3>
+        <div class="tags"><span class="tag">KoboToolbox</span><span class="tag">XLSForm</span><span class="tag">GPS</span><span class="tag">Drone</span></div>
+        <ul><li>Questionnaires de collecte pour les équipes de terrain</li><li>Photogrammétrie, orthophoto et mosaïque</li></ul></div>
+      <div class="skill"><h3>Suivi-évaluation et reporting</h3>
+        <ul><li>Contrôle qualité des données remontées par les agents de collecte</li><li>Fiches analytiques par zone, base des rapports de suivi</li><li>Rapports d'analyse et synthèses pour équipes techniques et non techniques</li></ul></div>
+    </div>
+  </section>
+
+  <section id="projets">
+    <div class="sec-head"><span class="eyebrow">Projets</span><h2>Six projets, de l'eau potable au foncier et aux mines.</h2></div>
+    <div class="projects">
+
+      <article class="proj">
+        <div class="meta"><strong>TERRABO</strong><span>Depuis mars 2026</span><span>Client : ANAH</span></div>
+        <div>
+          <h3>Délaissés fonciers de l'ANAH : contrôle qualité et analyse</h3>
+          <div class="cols">
+            <div><h4>Contexte</h4><p>Inventaire, évaluation de la récupérabilité et de la valeur vénale des parcelles non affectées des lotissements SICOGI, dans 10 communes.</p></div>
+            <div><h4>Mon rôle</h4><ul><li>Contrôle des superficies et délimitations collectées</li><li>Calcul des superficies, analyse des proportions exploitables</li><li>Structuration de la base géospatiale</li><li>Fiches analytiques par zone, synthèses cartographiques</li></ul></div>
+            <div><h4>Outils</h4><p>ArcGIS, QGIS, traitement de données vectorielles.</p></div>
+            <div class="result"><h4>Résultat</h4><p>Le projet porte sur 230 délaissés et 261 695 m². 93 978 m² (35,9 %) sont potentiellement récupérables.</p></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="meta"><strong>TERRABO</strong><span>2026</span><span>Bouaké, Côte d'Ivoire</span></div>
+        <div>
+          <h3>AEP Bouaké : atlas et données foncières</h3>
+          <div class="cols">
+            <div><h4>Contexte</h4><p>Alimentation en eau potable dans la région du Gbêkê : cartographie des ressources en eau et des sources de pollution.</p></div>
+            <div><h4>Mon rôle</h4><ul><li>Atlas cartographique à partir de données multi-sources</li><li>Nettoyage et structuration de données volumineuses</li><li>Retour qualité sur les enquêtes</li><li>Fiches d'identification foncière</li></ul></div>
+            <div><h4>Outils</h4><p>SIG, tableurs, bases de données attributaires.</p></div>
+            <div class="result"><h4>Résultat</h4><p>La carte régionale recense 986 ressources en eau et 362 sources de pollution sur 4 départements.</p></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="meta"><strong>TERRABO</strong><span>2026</span><span>Guinée</span></div>
+        <div>
+          <h3>EIES-AEP Guinée : collecte et cartographie</h3>
+          <div class="cols">
+            <div><h4>Contexte</h4><p>Étude d'impact environnemental et social d'un projet d'alimentation en eau potable.</p></div>
+            <div><h4>Mon rôle</h4><ul><li>Conception des questionnaires de collecte</li><li>Traitement et vérification des données</li><li>Analyse spatiale et cartes de zones</li></ul></div>
+            <div><h4>Outils</h4><p>KoboToolbox, Excel, PostgreSQL, analyse raster et vectorielle.</p></div>
+            <div class="result"><h4>Résultat</h4><p>Une méthode de contrôle qualité réutilisable pour les données remontées par des agents de collecte.</p></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="meta"><strong>TERRABO</strong><span>2026</span><span>Client : Bnetd</span></div>
+        <div>
+          <h3>Route Lakota – Niambezaria – Gueya</h3>
+          <div class="cols">
+            <div><h4>Contexte</h4><p>Projet de construction d'un tronçon routier.</p></div>
+            <div><h4>Mon rôle</h4><ul><li>Télédétection</li><li>Cartographie de l'occupation du sol</li><li>Différenciation des types de culture</li></ul></div>
+            <div class="result"><h4>Résultat</h4><p>Carte d'occupation du sol distinguant les types de culture le long du tracé.</p></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="meta"><strong>SODEMI</strong><span>Août 2025 – janv. 2026</span><span>Nord de la Côte d'Ivoire</span></div>
+        <div>
+          <h3>Favorabilité aurifère : mémoire de Master</h3>
+          <div class="cols">
+            <div><h4>Contexte</h4><p>Hiérarchiser les zones à potentiel aurifère pour orienter l'exploration minière, à partir d'archives géologiques, structurales et magnétiques.</p></div>
+            <div><h4>Mon rôle</h4><ul><li>Traitement d'images satellitaires et de cartes analogiques</li><li>Analyse multicritère sous SIG</li><li>Pilotage de la mission, rapports de mission et de stage</li></ul></div>
+            <div><h4>Outils</h4><p>QGIS, télédétection, superposition pondérée.</p></div>
+            <div class="result"><h4>Résultat</h4><p>Une carte finale en 3 classes de favorabilité, avec des cibles définies par 3 critères réunis : lithologie, buffer de 3 km autour d'un linéament magnétique, proximité d'un indice d'or. Mémoire de 81 pages.</p></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="meta"><strong>NZEMIX</strong><span>Mars – avril 2025</span><span>Enquêteur</span></div>
+        <div>
+          <h3>Net Zero Energy Mix, Afrique de l'Ouest</h3>
+          <div class="cols">
+            <div><h4>Contexte</h4><p>Projet de recherche franco-ivoirien sur les trajectoires énergétiques et le transport.</p></div>
+            <div><h4>Mon rôle</h4><ul><li>Localisation des sites d'enquête</li><li>Recueil des habitudes des transporteurs sur le terrain</li></ul></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="cartes">
+    <div class="sec-head"><span class="eyebrow">Galerie de cartes</span><h2>Quelques cartes produites en mission.</h2><p>Touchez une carte pour l'ouvrir en grand.</p></div>
+    <div class="gallery">
+      <figure><a href="img/gbeke.jpg" target="_blank" rel="noopener"><img src="img/gbeke.jpg" alt="Carte de la région du Gbêkê : ressources en eau et sources de pollution" loading="lazy"></a>
+        <figcaption><strong>Région du Gbêkê.</strong> Ressources en eau et sources de pollution, 4 départements. TERRABO.</figcaption></figure>
+      <figure class="tall"><a href="img/favorabilite-aurifere.jpg" target="_blank" rel="noopener"><img src="img/favorabilite-aurifere.jpg" alt="Carte finale de favorabilité aurifère du Nord de la Côte d'Ivoire" loading="lazy"></a>
+        <figcaption><strong>Favorabilité aurifère.</strong> Nord de la Côte d'Ivoire, analyse multicritère. SODEMI, 2025.</figcaption></figure>
+      <figure><a href="img/abayanssi.jpg" target="_blank" rel="noopener"><img src="img/abayanssi.jpg" alt="Carte de la localité d'Abayanssi" loading="lazy"></a>
+        <figcaption><strong>Abayanssi.</strong> Forages, borne fontaine, assainissement et hydrologie. TERRABO.</figcaption></figure>
+      <figure><a href="img/abouakro.jpg" target="_blank" rel="noopener"><img src="img/abouakro.jpg" alt="Carte de la localité d'Abouakro / Djamelazué" loading="lazy"></a>
+        <figcaption><strong>Abouakro / Djamelazué.</strong> Forages, stockage, assainissement et rivière Blélé. TERRABO.</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="chiffres">
+    <div class="sec-head"><span class="eyebrow">Mon rendement en chiffres</span><h2>Trois tableaux croisés pour lire mon travail.</h2><p>Chaque chiffre vient des rapports et cartes des projets.</p></div>
+
+    <div class="tbl">
+      <h3>Projets × compétences mobilisées</h3>
+      <p class="src">Source : mon CV et mes rapports de mission.</p>
+      <div class="scroll"><table>
+        <thead><tr><th>Projet</th><th class="c">SIG et cartes</th><th class="c">Base de données</th><th class="c">Collecte terrain</th><th class="c">Télédétection</th><th class="c">Rapports</th></tr></thead>
+        <tbody>
+          <tr><td>ANAH (TERRABO)</td><td class="on" aria-label="oui">●</td><td class="on" aria-label="oui">●</td><td class="off" aria-label="non">–</td><td class="off" aria-label="non">–</td><td class="on" aria-label="oui">●</td></tr>
+          <tr><td>AEP Bouaké (TERRABO)</td><td class="on" aria-label="oui">●</td><td class="on" aria-label="oui">●</td><td class="on" aria-label="oui">●</td><td class="off" aria-label="non">–</td><td class="on" aria-label="oui">●</td></tr>
+          <tr><td>EIES-AEP Guinée (TERRABO)</td><td class="on" aria-label="oui">●</td><td class="on" aria-label="oui">●</td><td class="on" aria-label="oui">●</td><td class="off" aria-label="non">–</td><td class="off" aria-label="non">–</td></tr>
+          <tr><td>Route Bnetd (TERRABO)</td><td class="on" aria-label="oui">●</td><td class="off" aria-label="non">–</td><td class="off" aria-label="non">–</td><td class="on" aria-label="oui">●</td><td class="off" aria-label="non">–</td></tr>
+          <tr><td>Favorabilité aurifère (SODEMI)</td><td class="on" aria-label="oui">●</td><td class="off" aria-label="non">–</td><td class="off" aria-label="non">–</td><td class="on" aria-label="oui">●</td><td class="on" aria-label="oui">●</td></tr>
+          <tr><td>NZEMIX</td><td class="off" aria-label="non">–</td><td class="off" aria-label="non">–</td><td class="on" aria-label="oui">●</td><td class="off" aria-label="non">–</td><td class="off" aria-label="non">–</td></tr>
+        </tbody>
+        <tfoot><tr><td>Projets concernés</td><td class="c" style="text-align:center">5 sur 6</td><td style="text-align:center">3 sur 6</td><td style="text-align:center">3 sur 6</td><td style="text-align:center">2 sur 6</td><td style="text-align:center">3 sur 6</td></tr></tfoot>
+      </table></div>
+      <p class="read">Le SIG intervient dans 5 projets sur 6. Les trois projets TERRABO sur l'eau et le foncier (ANAH, AEP Bouaké, EIES-AEP Guinée) associent tous cartographie et base de données.</p>
+    </div>
+
+    <div class="tbl">
+      <h3>Projet ANAH : communes × niveau de récupérabilité (m²)</h3>
+      <p class="src">Source : annexe du rapport d'évaluation des délaissés de terrains, 10 communes, version du 17 septembre 2026.</p>
+      <div class="scroll"><table>
+        <thead><tr><th>Commune</th><th>Surface totale</th><th>Facilement récupérable</th><th>Récupérable sous conditions</th><th>Difficilement récupérable</th><th>Potentiel récupérable</th></tr></thead>
+        <tbody>
+          <tr><td>Adjamé</td><td>18 163</td><td>5 543</td><td>486</td><td>12 134</td><td>6 029</td></tr>
+          <tr><td>Koumassi</td><td>3 232</td><td>861</td><td>0</td><td>2 371</td><td>861</td></tr>
+          <tr><td>Cocody</td><td>10 818</td><td>927</td><td>1 395</td><td>8 496</td><td>2 322</td></tr>
+          <tr><td>Yopougon</td><td>126 143</td><td>22 835</td><td>5 075</td><td>98 233</td><td>27 910</td></tr>
+          <tr><td>San-Pedro</td><td>2 570</td><td>2 296</td><td>0</td><td>274</td><td>2 296</td></tr>
+          <tr><td>Daloa</td><td>1 522</td><td>1 522</td><td>0</td><td>0</td><td>1 522</td></tr>
+          <tr class="hl"><td>Bouaké</td><td>36 967</td><td>32 329</td><td>2 488</td><td>2 150</td><td>34 817</td></tr>
+          <tr><td>Marcory</td><td>24 695</td><td>5 830</td><td>1 604</td><td>17 261</td><td>7 434</td></tr>
+          <tr><td>Abobo</td><td>35 023</td><td>8 460</td><td>0</td><td>26 563</td><td>8 460</td></tr>
+          <tr><td>Bingerville</td><td>2 562</td><td>999</td><td>1 328</td><td>235</td><td>2 327</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total (230 délaissés)</td><td>261 695</td><td>81 602</td><td>12 376</td><td>167 717</td><td>93 978</td></tr></tfoot>
+      </table></div>
+      <p class="read">35,9 % de la surface des délaissés est potentiellement récupérable. Bouaké (34 817 m²) et Yopougon (27 910 m²) concentrent à eux deux 66,7 % de ce potentiel ; à Bouaké, 94,2 % de la surface est récupérable.</p>
+    </div>
+
+    <div class="tbl">
+      <h3>Région du Gbêkê : départements × ressources en eau et pollution</h3>
+      <p class="src">Source : tableau d'indicateurs de la carte régionale, TERRABO.</p>
+      <div class="scroll"><table>
+        <thead><tr><th>Indicateur</th><th>Bouaké</th><th>Béoumi</th><th>Sakassou</th><th>Botro</th><th>Total</th></tr></thead>
+        <tbody>
+          <tr><td>Ressources en eau</td><td>397</td><td>267</td><td>179</td><td>143</td><td>986</td></tr>
+          <tr><td>Sources de pollution</td><td>256</td><td>49</td><td>28</td><td>29</td><td>362</td></tr>
+          <tr class="hl"><td>Pollution à moins de 30 m (cas critique)</td><td>103</td><td>10</td><td>22</td><td>20</td><td>155</td></tr>
+          <tr><td>Pollution entre 30 et 100 m</td><td>66</td><td>4</td><td>2</td><td>5</td><td>77</td></tr>
+          <tr><td>Pollution entre 100 et 500 m</td><td>71</td><td>4</td><td>4</td><td>1</td><td>80</td></tr>
+          <tr><td>Pollution à plus de 500 m</td><td>16</td><td>31</td><td>0</td><td>3</td><td>50</td></tr>
+        </tbody>
+      </table></div>
+      <p class="read">155 des 362 sources de pollution (42,8 %) se trouvent à moins de 30 m d'une ressource en eau. Bouaké en concentre 103, soit 66,5 % des cas critiques.</p>
+    </div>
+  </section>
+
+  <section id="parcours">
+    <div class="tl">
+      <div>
+        <div class="sec-head"><span class="eyebrow">Parcours</span><h2>Expériences</h2></div>
+        <ol>
+          <li><time>Mars 2026 – auj.</time><div><strong>Stagiaire géomaticien, TERRABO</strong><span>ANAH, AEP Bouaké, EIES-AEP Guinée, route Bnetd</span></div></li>
+          <li><time>Août 2025 – janv. 2026</time><div><strong>Stagiaire géomaticien, SODEMI</strong><span>Favorabilité aurifère, télédétection, rapports de mission</span></div></li>
+          <li><time>Mars – avril 2025</time><div><strong>Enquêteur, NZEMIX</strong><span>Projet de recherche Net Zero Energy Mix</span></div></li>
+        </ol>
+      </div>
+      <div>
+        <div class="sec-head"><span class="eyebrow">Formation</span><h2>Diplômes</h2></div>
+        <ol>
+          <li><time>2024 – 2026</time><div><strong>Master 2 Géomatique</strong><span>Ingénierie de l'Environnement et de l'Aménagement, Institut Universitaire d'Abidjan</span></div></li>
+          <li><time>2022 – 2023</time><div><strong>Licence en Géographie</strong><span>Institut de Géographie Tropicale, UFHB</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="sec-head"><span class="eyebrow">Contact</span><h2>Parlons de votre prochain projet.</h2><p>Disponible à Abidjan (hybride) et pour des missions de terrain.</p></div>
+    <div class="contact">
+      <div class="crow"><span class="k">E-mail</span><span class="v" id="mail">anohguy17@gmail.com</span><button class="copy" type="button" data-copy="anohguy17@gmail.com">Copier</button></div>
+      <div class="crow"><span class="k">Téléphone</span><span class="v" id="tel">+225 07 05 82 74 45</span><button class="copy" type="button" data-copy="+225 07 05 82 74 45">Copier</button></div>
+      <div class="crow"><span class="k">LinkedIn</span><span class="v">linkedin.com/Anohguy</span></div>
+    </div>
+    <div class="btns"><a class="btn primary" href="mailto:anohguy17@gmail.com">Écrire un e-mail</a><a class="btn ghost" href="cv.pdf" target="_blank" rel="noopener">Voir mon CV</a></div>
+  </section>
+  </main>
+  <footer>Adiko Guy Anoh · Géomaticien · Abidjan, Côte d'Ivoire</footer>
+</div>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=b.getAttribute('data-copy');
+    function done(){var o=b.textContent;b.textContent='Copié';setTimeout(function(){b.textContent=o},1500)}
+    function fallback(){var r=document.createRange();r.selectNodeContents(b.parentNode.querySelector('.v'));var s=window.getSelection();s.removeAllRanges();s.addRange(r)}
+    try{navigator.clipboard.writeText(t).then(done,fallback)}catch(e){fallback()}
+  })
+});
+</script>
